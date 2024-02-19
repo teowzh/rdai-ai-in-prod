@@ -9,7 +9,7 @@ pipe_t2t = pipeline("text2text-generation", model="TinyLlama/TinyLlama-1.1B-Chat
 #     return {"Hello": "World!"}
 
 @app.get("/infer_tinyllama")
-def t5(input):
+def tinyllama(input):
     output = pipe_t2t(input)
     return {"output": output[0]["generated_text"]}
 
