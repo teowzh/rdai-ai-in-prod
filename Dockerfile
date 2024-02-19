@@ -19,5 +19,6 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY --chown=user . $HOME/app
 
+WORKDIR $HOME/app
 
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
