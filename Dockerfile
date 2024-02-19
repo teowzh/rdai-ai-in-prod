@@ -16,6 +16,7 @@ COPY ./requirements.txt /code/requirements.txt
 
 RUN pip install -U pip
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+RUN pip install git+https://github.com/huggingface/transformers
 
 COPY --chown=user . $HOME/app
 
