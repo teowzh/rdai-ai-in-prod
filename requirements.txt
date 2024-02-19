@@ -6,6 +6,7 @@ xformers
 einops
 peft 
 optimum
+autoawq-kernels
 fastapi==0.74.*
 requests==2.27.*
 sentencepiece==0.1.*
