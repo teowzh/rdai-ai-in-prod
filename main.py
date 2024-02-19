@@ -24,6 +24,9 @@ pipe_t2t = pipeline("text-generation",
                 model=model,
                 tokenizer=tokenizer,
                 max_new_tokens=256,
+                max_length=30,
+                padding=30,
+                truncation=True,
                 torch_dtype=torch.bfloat16,
                 device_map="auto")
 
