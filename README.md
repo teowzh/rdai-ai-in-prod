@@ -11,4 +11,4 @@ Check out the configuration reference at https://huggingface.co/docs/hub/spaces-
 
 This is a FASTAPI with Docker inference using Google Flan T5. 
 
-![Alt text](image.png)
+![image](https://github.com/teowzh/rdai-ai-in-prod/assets/9086568/711d0b99-4dc4-4319-8c6e-c1de7f302720)
