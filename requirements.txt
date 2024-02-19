@@ -6,12 +6,9 @@ transformers==4.*
 uvicorn[standard]==0.17.*
 datasets 
 loralib 
-sentencepiece
 bitsandbytes 
 accelerate 
 xformers 
 einops
-transformers 
 peft 
-accelerate 
 optimum
