@@ -9,6 +9,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
 USER $USERNAME
 
+ENV PATH="${PATH}:/home/user/.local/bin"
 WORKDIR /code
 
 COPY ./requirements.txt /code/requirements.txt
