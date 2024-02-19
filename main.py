@@ -4,7 +4,7 @@ from fastapi.responses import FileResponse
 from transformers import pipeline
 
 app = FastAPI()
-pipe_t2t = pipeline("text2text-generation", model="TinyLlama/TinyLlama-1.1B-Chat-v1.0")
+pipe_t2t = pipeline("text-generation", model="TinyLlama/TinyLlama-1.1B-Chat-v1.0")
 
 # @app.get("/")
 # def read_root():
