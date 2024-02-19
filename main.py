@@ -13,7 +13,7 @@ quant_path = 'TinyLlama-1.1B-Chat-v1.0-awq'
 quant_config = { "zero_point": True, "q_group_size": 128, "w_bit": 4, "version": "GEMV" }
 
 model = AutoAWQForCausalLM.from_pretrained(
-    original_model_id, safetensors=True, **{"torch_dtype": torch.float16, "low_cpu_mem_usage": True, "use_cache": False}, device_map="cuda:0"
+    original_model_id, safetensors=True, **{"torch_dtype": torch.float16, "low_cpu_mem_usage": True, "use_cache": False}
 )
 tokenizer = AutoTokenizer.from_pretrained(original_model_id,
                                           torch_dtype="auto")
