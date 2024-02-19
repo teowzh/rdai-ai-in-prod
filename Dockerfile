@@ -3,10 +3,10 @@ FROM python:3.9
 ARG USERNAME=user
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
+ARG HOME=/home/$USERNAME
 
 # Create the user
-RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
+RUN useradd -m -u $USER_UID $USERNAME
 USER $USERNAME
 
 ENV PATH="${PATH}:/home/user/.local/bin"
@@ -17,6 +17,7 @@ COPY ./requirements.txt /code/requirements.txt
 RUN pip install -U pip
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-COPY . .
+COPY --chown=user . $HOME/app
+
 
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
