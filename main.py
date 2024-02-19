@@ -23,6 +23,7 @@ model.quantize(tokenizer, quant_config=quant_config)
 pipe_t2t = pipeline("text-generation",
                 model=model,
                 tokenizer=tokenizer,
+                max_new_tokens=256,
                 torch_dtype=torch.bfloat16,
                 device_map="auto")
 
